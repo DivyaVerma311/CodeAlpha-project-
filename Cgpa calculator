@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    float totalGradePoints = 0, totalCredits = 0;
+
+    cout << "Enter the number of subjects: ";
+    cin >> n;
+
+    for (int i = 1; i <= n; ++i) {
+        float credit, gradePoint;
+        cout << "\nSubject " << i << ":\n";
+        cout << "  Enter credit hours: ";
+        cin >> credit;
+        cout << "  Enter grade point: ";
+        cin >> gradePoint;
+
+        totalGradePoints += credit * gradePoint;
+        totalCredits += credit;
+    }
+
+    if (totalCredits == 0) {
+        cout << "\nTotal credits cannot be zero.\n";
+    } else {
+        float cgpa = totalGradePoints / totalCredits;
+        cout << "\nYour CGPA is: " << cgpa << endl;
+    }
+
+    return 0;
+}
